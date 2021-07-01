@@ -40,6 +40,7 @@ namespace YoketoruVS21
             this.startButton = new System.Windows.Forms.Button();
             this.titleButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tempLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -101,7 +102,7 @@ namespace YoketoruVS21
             this.GameOverLabel.AutoSize = true;
             this.GameOverLabel.Font = new System.Drawing.Font("Yu Gothic UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.GameOverLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.GameOverLabel.Location = new System.Drawing.Point(72, 185);
+            this.GameOverLabel.Location = new System.Drawing.Point(255, 256);
             this.GameOverLabel.Name = "GameOverLabel";
             this.GameOverLabel.Size = new System.Drawing.Size(209, 54);
             this.GameOverLabel.TabIndex = 6;
@@ -112,7 +113,7 @@ namespace YoketoruVS21
             this.ClearLabel.AutoSize = true;
             this.ClearLabel.Font = new System.Drawing.Font("Yu Gothic UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ClearLabel.ForeColor = System.Drawing.Color.Red;
-            this.ClearLabel.Location = new System.Drawing.Point(95, 316);
+            this.ClearLabel.Location = new System.Drawing.Point(307, 256);
             this.ClearLabel.Name = "ClearLabel";
             this.ClearLabel.Size = new System.Drawing.Size(124, 54);
             this.ClearLabel.TabIndex = 7;
@@ -123,35 +124,49 @@ namespace YoketoruVS21
             this.startButton.BackColor = System.Drawing.Color.LightSalmon;
             this.startButton.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.startButton.ForeColor = System.Drawing.Color.DarkSeaGreen;
-            this.startButton.Location = new System.Drawing.Point(307, 251);
+            this.startButton.Location = new System.Drawing.Point(287, 313);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(164, 73);
             this.startButton.TabIndex = 8;
             this.startButton.Text = "スタート!!";
             this.startButton.UseVisualStyleBackColor = false;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // titleButton
             // 
             this.titleButton.BackColor = System.Drawing.Color.Green;
             this.titleButton.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.titleButton.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.titleButton.Location = new System.Drawing.Point(510, 251);
+            this.titleButton.Location = new System.Drawing.Point(287, 316);
             this.titleButton.Name = "titleButton";
             this.titleButton.Size = new System.Drawing.Size(164, 73);
             this.titleButton.TabIndex = 9;
             this.titleButton.Text = "タイトルへ";
             this.titleButton.UseVisualStyleBackColor = false;
+            this.titleButton.Click += new System.EventHandler(this.titleButton_Click);
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // tempLabel
+            // 
+            this.tempLabel.AutoSize = true;
+            this.tempLabel.Location = new System.Drawing.Point(61, 206);
+            this.tempLabel.Name = "tempLabel";
+            this.tempLabel.Size = new System.Drawing.Size(19, 15);
+            this.tempLabel.TabIndex = 10;
+            this.tempLabel.Text = "★";
+            this.tempLabel.UseWaitCursor = true;
+            this.tempLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tempLabel);
             this.Controls.Add(this.titleButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.ClearLabel);
@@ -182,6 +197,7 @@ namespace YoketoruVS21
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button titleButton;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label tempLabel;
     }
 }
 
