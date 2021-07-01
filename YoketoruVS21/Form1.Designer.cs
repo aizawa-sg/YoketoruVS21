@@ -29,12 +29,17 @@ namespace YoketoruVS21
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.startButton = new System.Windows.Forms.Button();
             this.copyrightlabel = new System.Windows.Forms.Label();
             this.timeLabel = new System.Windows.Forms.Label();
             this.rightLabel = new System.Windows.Forms.Label();
             this.hiLabel = new System.Windows.Forms.Label();
+            this.GameOverLabel = new System.Windows.Forms.Label();
+            this.ClearLabel = new System.Windows.Forms.Label();
+            this.startButton = new System.Windows.Forms.Button();
+            this.titleButton = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // titleLabel
@@ -47,18 +52,6 @@ namespace YoketoruVS21
             this.titleLabel.Size = new System.Drawing.Size(220, 48);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "よけとる2021";
-            // 
-            // startButton
-            // 
-            this.startButton.BackColor = System.Drawing.Color.LightSalmon;
-            this.startButton.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.startButton.ForeColor = System.Drawing.Color.DarkSeaGreen;
-            this.startButton.Location = new System.Drawing.Point(307, 259);
-            this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(164, 73);
-            this.startButton.TabIndex = 1;
-            this.startButton.Text = "スタート!!";
-            this.startButton.UseVisualStyleBackColor = false;
             // 
             // copyrightlabel
             // 
@@ -103,16 +96,70 @@ namespace YoketoruVS21
             this.hiLabel.Text = "HighScore100";
             this.hiLabel.Click += new System.EventHandler(this.label5_Click);
             // 
+            // GameOverLabel
+            // 
+            this.GameOverLabel.AutoSize = true;
+            this.GameOverLabel.Font = new System.Drawing.Font("Yu Gothic UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.GameOverLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.GameOverLabel.Location = new System.Drawing.Point(72, 185);
+            this.GameOverLabel.Name = "GameOverLabel";
+            this.GameOverLabel.Size = new System.Drawing.Size(209, 54);
+            this.GameOverLabel.TabIndex = 6;
+            this.GameOverLabel.Text = "GameOver";
+            // 
+            // ClearLabel
+            // 
+            this.ClearLabel.AutoSize = true;
+            this.ClearLabel.Font = new System.Drawing.Font("Yu Gothic UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ClearLabel.ForeColor = System.Drawing.Color.Red;
+            this.ClearLabel.Location = new System.Drawing.Point(95, 316);
+            this.ClearLabel.Name = "ClearLabel";
+            this.ClearLabel.Size = new System.Drawing.Size(124, 54);
+            this.ClearLabel.TabIndex = 7;
+            this.ClearLabel.Text = "Clear!";
+            // 
+            // startButton
+            // 
+            this.startButton.BackColor = System.Drawing.Color.LightSalmon;
+            this.startButton.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.startButton.ForeColor = System.Drawing.Color.DarkSeaGreen;
+            this.startButton.Location = new System.Drawing.Point(307, 251);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(164, 73);
+            this.startButton.TabIndex = 8;
+            this.startButton.Text = "スタート!!";
+            this.startButton.UseVisualStyleBackColor = false;
+            // 
+            // titleButton
+            // 
+            this.titleButton.BackColor = System.Drawing.Color.Green;
+            this.titleButton.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.titleButton.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.titleButton.Location = new System.Drawing.Point(510, 251);
+            this.titleButton.Name = "titleButton";
+            this.titleButton.Size = new System.Drawing.Size(164, 73);
+            this.titleButton.TabIndex = 9;
+            this.titleButton.Text = "タイトルへ";
+            this.titleButton.UseVisualStyleBackColor = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.titleButton);
+            this.Controls.Add(this.startButton);
+            this.Controls.Add(this.ClearLabel);
+            this.Controls.Add(this.GameOverLabel);
             this.Controls.Add(this.hiLabel);
             this.Controls.Add(this.rightLabel);
             this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.copyrightlabel);
-            this.Controls.Add(this.startButton);
             this.Controls.Add(this.titleLabel);
             this.Location = new System.Drawing.Point(100, 100);
             this.Name = "Form1";
@@ -126,11 +173,15 @@ namespace YoketoruVS21
         #endregion
 
         private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Label copyrightlabel;
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Label rightLabel;
         private System.Windows.Forms.Label hiLabel;
+        private System.Windows.Forms.Label GameOverLabel;
+        private System.Windows.Forms.Label ClearLabel;
+        private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.Button titleButton;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
