@@ -20,19 +20,18 @@ namespace YoketoruVS21
         const int ItemMax = 3;
         const int ChrMax = PlayerMax + EnemyMax + ItemMax;
 
+        Label[] chrs = new Label[ChrMax];
+        const int PlayerIndex = 0;
+        const int EnemyIndex = PlayerIndex + PlayerMax;
+        const int ItemIndex = EnemyIndex + EnemyMax;
+
+
         const string PlayerText = "(・ω・)";
         const string EnemyText = "◆";
         const string ItemText = "★";
 
         static Random rand = new Random();
 
-
-
-        Label[] chrs = new Label[ChrMax];
-
-        const int PlayerIndex = 0;
-        const int EnemyIndex = PlayerMax;
-        const int ItemIndex = EnemyIndex + EnemyMax;
 
         enum State
         {
@@ -69,8 +68,12 @@ namespace YoketoruVS21
                     chrs[i].Text = ItemText;
                 }
                 Controls.Add(chrs[i]);
+
+                chrs[i].Font = tempLabel.Font;
+                Controls.Add(chrs[i]);
             }
             
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -131,6 +134,7 @@ namespace YoketoruVS21
                     ClearLabel.Visible = false;
 
                     break;
+
                 case State.Game:
                     timeLabel.Visible = false;
                     startButton.Visible = false;
