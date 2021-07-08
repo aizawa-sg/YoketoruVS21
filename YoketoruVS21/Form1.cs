@@ -29,7 +29,7 @@ namespace YoketoruVS21
         const int PlayerIndex = 0;
         const int EnemyIndex = PlayerIndex + PlayerMax;
         const int ItemIndex = EnemyIndex + EnemyMax;
-
+        const int StartTime = 100;
 
         const string PlayerText = "(・ω・)";
         const string EnemyText = "◆";
@@ -53,6 +53,7 @@ namespace YoketoruVS21
         public static extern short GetAsyncKeyState(int vKey);
 
         int itemcount=0;
+        int time = 0;
 
         public Form1()
         {
@@ -158,6 +159,7 @@ namespace YoketoruVS21
                     }
 
                     itemcount = ItemMax;
+                    time = StartTime + 1;
 
                     break;
 
@@ -180,6 +182,10 @@ namespace YoketoruVS21
 
         void UpdateGame()
         {
+            time--;
+            timeLabel.Text = "Time" + time;
+
+
             Point mp = PointToClient(MousePosition);
 
             //  TODO:mpがプレイヤーラベルの中心になるように設定
@@ -188,6 +194,8 @@ namespace YoketoruVS21
 
             for(int i=EnemyIndex;i<ChrMax; i++)
             {
+                if (!chrs[i].Visible) continue;
+
                 chrs[i].Left += vx[i];
                 chrs[i].Top += vy[i];
 
@@ -230,6 +238,11 @@ namespace YoketoruVS21
                             nextState = State.Clear;
                         }
                         rightLabel.Text = "★" + itemcount;
+
+                        //vx[i] = 0;
+                        //vy[i] = 0;
+                        //chrs[i].Left = 10000;
+
                     }
                 }
 
