@@ -52,6 +52,8 @@ namespace YoketoruVS21
         [DllImport("user32.dll")]
         public static extern short GetAsyncKeyState(int vKey);
 
+        int itemcount=0;
+
         public Form1()
         {
             InitializeComponent();
@@ -154,6 +156,9 @@ namespace YoketoruVS21
                         vx[i] = rand.Next(-SpeedMax, SpeedMax + 1);
                         vy[i] = rand.Next(-SpeedMax, SpeedMax + 1);
                     }
+
+                    itemcount = ItemMax;
+
                     break;
 
                     
@@ -209,8 +214,26 @@ namespace YoketoruVS21
                     && (mp.Y< chrs[i].Bottom)
                     )
                 {
-                    MessageBox.Show("重なった！！");
+                    //MessageBox.Show("重なった！！");
+
+                    if (i < ItemIndex)
+                        //if(chrs[i].Text == Enem)
+                    {
+                        nextState = State.Gameover;
+                    }
+                    else
+                    {
+                        chrs[i].Visible = false;
+                        itemcount--;
+                        if(itemcount<=0)
+                        {
+                            nextState = State.Clear;
+                        }
+                        rightLabel.Text = "★" + itemcount;
+                    }
                 }
+
+                
             }
             
         }
