@@ -54,6 +54,7 @@ namespace YoketoruVS21
 
         int itemcount=0;
         int time = 0;
+        int hiscore = 0;
 
         public Form1()
         {
@@ -174,6 +175,12 @@ namespace YoketoruVS21
                     //MessageBox.Show("Clear");
                     ClearLabel.Visible = true;
                     titleButton.Visible = true;
+                    hiLabel.Visible = true;
+                    if(time>hiscore)
+                    {
+                        hiscore = time;
+                        hiLabel.Text = "HighScore" + hiscore;
+                    }
                     break;
                    
                       
@@ -184,7 +191,10 @@ namespace YoketoruVS21
         {
             time--;
             timeLabel.Text = "Time" + time;
-
+            if(time<=0)
+            {
+                nextState = State.Gameover;
+            }
 
             Point mp = PointToClient(MousePosition);
 
