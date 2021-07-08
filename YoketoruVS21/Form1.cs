@@ -16,10 +16,11 @@ namespace YoketoruVS21
         const bool isDebug = true;
 
         const int SpeedMax = 20;
+       
 
         const int PlayerMax = 1;
-        const int EnemyMax = 3;
-        const int ItemMax = 3;
+        const int EnemyMax = 10;
+        const int ItemMax = 10;
         const int ChrMax = PlayerMax + EnemyMax + ItemMax;
 
         Label[] chrs = new Label[ChrMax];
@@ -29,7 +30,7 @@ namespace YoketoruVS21
         const int PlayerIndex = 0;
         const int EnemyIndex = PlayerIndex + PlayerMax;
         const int ItemIndex = EnemyIndex + EnemyMax;
-        const int StartTime = 100;
+        const int StartTime = 200;
 
         const string PlayerText = "(・ω・)";
         const string EnemyText = "◆";

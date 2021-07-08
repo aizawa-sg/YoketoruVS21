@@ -153,9 +153,10 @@ namespace YoketoruVS21
             // tempLabel
             // 
             this.tempLabel.AutoSize = true;
-            this.tempLabel.Location = new System.Drawing.Point(61, 206);
+            this.tempLabel.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tempLabel.Location = new System.Drawing.Point(76, 203);
             this.tempLabel.Name = "tempLabel";
-            this.tempLabel.Size = new System.Drawing.Size(19, 15);
+            this.tempLabel.Size = new System.Drawing.Size(44, 37);
             this.tempLabel.TabIndex = 10;
             this.tempLabel.Text = "★";
             this.tempLabel.UseWaitCursor = true;
