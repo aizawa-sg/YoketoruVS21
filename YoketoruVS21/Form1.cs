@@ -141,7 +141,7 @@ namespace YoketoruVS21
                     GameOverLabel.Visible = false;
                     titleButton.Visible = false;
                     ClearLabel.Visible = false;
-
+                    hiLabel.Text = "HighScore" + hiscore;
                     break;
 
                 case State.Game:
@@ -157,6 +157,7 @@ namespace YoketoruVS21
                         chrs[i].Top = rand.Next(ClientSize.Height - chrs[i].Height);
                         vx[i] = rand.Next(-SpeedMax, SpeedMax + 1);
                         vy[i] = rand.Next(-SpeedMax, SpeedMax + 1);
+                        chrs[i].Visible = true;
                     }
 
                     itemcount = ItemMax;
